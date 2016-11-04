@@ -9,7 +9,7 @@ import requests
 import json
 
 
-#send intial request
+#post intial request
 headers = {'Content-Type':'application/json'}
 url = 'http://challenge.code2040.org/api/prefix' 
 data_2 = {"token": "efb1889aaabf1700dbd03ec4fcc27c17"}     
@@ -34,17 +34,17 @@ for word in dic["array"]:
         non_prefix.append(word)
         
 
-##I would need to add some more code if the array you gave me had "words" shorter
-##than the prefix given, but this doesn't appear to be needed here
+#I would need to add some more code if the array given had "words" shorter
+#than the prefix given, but this doesn't appear to be needed here
 
-
+#send non_prefeix back
 url_4='http://challenge.code2040.org/api/prefix/validate'
 headers={"Content-Type":"application/json"}
 answer=requests.post(url_4, data=json.dumps({'token': 'efb1889aaabf1700dbd03ec4fcc27c17', 'array': non_prefix}),headers=headers)
 print(answer.status_code, answer.reason)
 
 
-#
+
 
 
 
