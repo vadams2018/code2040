@@ -27,6 +27,5 @@ reverse=string[::-1]
 #send reversed string back
 url_2= 'http://challenge.code2040.org/api/reverse/validate'
 data_2={"token": "efb1889aaabf1700dbd03ec4fcc27c17", "string": reverse}
-
 answer=requests.post(url_2, data=json.dumps(data_2), headers=headers)
 print(answer.status_code, answer.reason)
