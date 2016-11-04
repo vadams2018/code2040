@@ -30,11 +30,6 @@ for i in range(len(dic["haystack"])):
 
 #send needle location back
 url_2= 'http://challenge.code2040.org/api/haystack/validate'
-#data_2={"token": "efb1889aaabf1700dbd03ec4fcc27c17", "needle": index}
-#request_2=Request(url_2, urlencode(data_2).encode())
-#response=urlopen(request_2).read().decode()
-#print(response)
-
 headers = {"Content-Type":"application/json"}
 answer=requests.post(url_2, data=json.dumps({"token": "efb1889aaabf1700dbd03ec4fcc27c17", "needle": index}),headers=headers)
 print(answer.status_code, answer.reason)
